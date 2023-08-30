@@ -36,11 +36,11 @@
             LabelTasaInteres = new Label();
             LabelValorFinal = new Label();
             LabelTiempo = new Label();
-            TxtInte = new TextBox();
-            textBoxCap = new TextBox();
-            textBoxTI = new TextBox();
-            textBoxVF = new TextBox();
-            textBoxTiempo = new TextBox();
+            TextBoxInt = new TextBox();
+            TextBoxCap = new TextBox();
+            TextBoxTI = new TextBox();
+            TextBoxVF = new TextBox();
+            TextBoxTiempo = new TextBox();
             ComboBoxTI = new ComboBox();
             ComboBoxTiempo = new ComboBox();
             BtnCalcular = new Button();
@@ -76,7 +76,7 @@
             // 
             ComboBoxQCalcular.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxQCalcular.FormattingEnabled = true;
-            ComboBoxQCalcular.Items.AddRange(new object[] { "Interes", "Capital", "Tasa de Interes", "Valor Final", "Tiempo" });
+            ComboBoxQCalcular.Items.AddRange(new object[] { "Interes", "Capital", "Valor Final", "Tasa de Interes", "Tiempo" });
             ComboBoxQCalcular.Location = new Point(483, 132);
             ComboBoxQCalcular.Name = "ComboBoxQCalcular";
             ComboBoxQCalcular.Size = new Size(121, 23);
@@ -138,40 +138,40 @@
             LabelTiempo.TabIndex = 7;
             LabelTiempo.Text = "Tiempo";
             // 
-            // TxtInte
+            // TextBoxInt
             // 
-            TxtInte.Location = new Point(389, 229);
-            TxtInte.Name = "TxtInte";
-            TxtInte.Size = new Size(100, 23);
-            TxtInte.TabIndex = 8;
+            TextBoxInt.Location = new Point(389, 229);
+            TextBoxInt.Name = "TextBoxInt";
+            TextBoxInt.Size = new Size(100, 23);
+            TextBoxInt.TabIndex = 8;
             // 
-            // textBoxCap
+            // TextBoxCap
             // 
-            textBoxCap.Location = new Point(389, 264);
-            textBoxCap.Name = "textBoxCap";
-            textBoxCap.Size = new Size(100, 23);
-            textBoxCap.TabIndex = 9;
+            TextBoxCap.Location = new Point(389, 264);
+            TextBoxCap.Name = "TextBoxCap";
+            TextBoxCap.Size = new Size(100, 23);
+            TextBoxCap.TabIndex = 9;
             // 
-            // textBoxTI
+            // TextBoxTI
             // 
-            textBoxTI.Location = new Point(389, 345);
-            textBoxTI.Name = "textBoxTI";
-            textBoxTI.Size = new Size(100, 23);
-            textBoxTI.TabIndex = 10;
+            TextBoxTI.Location = new Point(389, 345);
+            TextBoxTI.Name = "TextBoxTI";
+            TextBoxTI.Size = new Size(100, 23);
+            TextBoxTI.TabIndex = 10;
             // 
-            // textBoxVF
+            // TextBoxVF
             // 
-            textBoxVF.Location = new Point(389, 306);
-            textBoxVF.Name = "textBoxVF";
-            textBoxVF.Size = new Size(100, 23);
-            textBoxVF.TabIndex = 11;
+            TextBoxVF.Location = new Point(389, 306);
+            TextBoxVF.Name = "TextBoxVF";
+            TextBoxVF.Size = new Size(100, 23);
+            TextBoxVF.TabIndex = 11;
             // 
-            // textBoxTiempo
+            // TextBoxTiempo
             // 
-            textBoxTiempo.Location = new Point(389, 383);
-            textBoxTiempo.Name = "textBoxTiempo";
-            textBoxTiempo.Size = new Size(100, 23);
-            textBoxTiempo.TabIndex = 12;
+            TextBoxTiempo.Location = new Point(389, 383);
+            TextBoxTiempo.Name = "TextBoxTiempo";
+            TextBoxTiempo.Size = new Size(100, 23);
+            TextBoxTiempo.TabIndex = 12;
             // 
             // ComboBoxTI
             // 
@@ -215,11 +215,11 @@
             Controls.Add(BtnCalcular);
             Controls.Add(ComboBoxTiempo);
             Controls.Add(ComboBoxTI);
-            Controls.Add(textBoxTiempo);
-            Controls.Add(textBoxVF);
-            Controls.Add(textBoxTI);
-            Controls.Add(textBoxCap);
-            Controls.Add(TxtInte);
+            Controls.Add(TextBoxTiempo);
+            Controls.Add(TextBoxVF);
+            Controls.Add(TextBoxTI);
+            Controls.Add(TextBoxCap);
+            Controls.Add(TextBoxInt);
             Controls.Add(LabelTiempo);
             Controls.Add(LabelValorFinal);
             Controls.Add(LabelTasaInteres);
@@ -245,11 +245,11 @@
         private Label LabelTasaInteres;
         private Label LabelValorFinal;
         private Label LabelTiempo;
-        private TextBox TxtInte;
-        private TextBox textBoxCap;
-        private TextBox textBoxTI;
-        private TextBox textBoxVF;
-        private TextBox textBoxTiempo;
+        private TextBox TextBoxInt;
+        private TextBox TextBoxCap;
+        private TextBox TextBoxTI;
+        private TextBox TextBoxVF;
+        private TextBox TextBoxTiempo;
         private ComboBox ComboBoxTI;
         private ComboBox ComboBoxTiempo;
         private Button BtnCalcular;
