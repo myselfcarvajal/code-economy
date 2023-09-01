@@ -144,6 +144,7 @@
             TextBoxInt.Name = "TextBoxInt";
             TextBoxInt.Size = new Size(100, 23);
             TextBoxInt.TabIndex = 8;
+            TextBoxInt.KeyPress += TextBoxInt_KeyPress;
             // 
             // TextBoxCap
             // 
@@ -151,6 +152,7 @@
             TextBoxCap.Name = "TextBoxCap";
             TextBoxCap.Size = new Size(100, 23);
             TextBoxCap.TabIndex = 9;
+            TextBoxCap.KeyPress += TextBoxCap_KeyPress;
             // 
             // TextBoxTI
             // 
@@ -158,6 +160,7 @@
             TextBoxTI.Name = "TextBoxTI";
             TextBoxTI.Size = new Size(100, 23);
             TextBoxTI.TabIndex = 10;
+            TextBoxTI.KeyPress += TextBoxTI_KeyPress;
             // 
             // TextBoxVF
             // 
@@ -165,6 +168,7 @@
             TextBoxVF.Name = "TextBoxVF";
             TextBoxVF.Size = new Size(100, 23);
             TextBoxVF.TabIndex = 11;
+            TextBoxVF.KeyPress += TextBoxVF_KeyPress;
             // 
             // TextBoxTiempo
             // 
@@ -172,6 +176,7 @@
             TextBoxTiempo.Name = "TextBoxTiempo";
             TextBoxTiempo.Size = new Size(100, 23);
             TextBoxTiempo.TabIndex = 12;
+            TextBoxTiempo.KeyPress += TextBoxTiempo_KeyPress;
             // 
             // ComboBoxTI
             // 

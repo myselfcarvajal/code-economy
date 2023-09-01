@@ -88,5 +88,43 @@ namespace code_economy
                     break;
             }
         }
+
+        //Solo permitir la entrada de (Numeros) y (,)
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != ',' && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == ',' && ((System.Windows.Forms.TextBox)sender).Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TextBoxInt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e);
+        }
+
+        private void TextBoxCap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e);
+        }
+
+        private void TextBoxVF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e);
+        }
+
+        private void TextBoxTI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e);
+        }
+
+        private void TextBoxTiempo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox_KeyPress(sender, e);
+        }
     }
 }
