@@ -182,7 +182,7 @@
             // 
             ComboBoxTI.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxTI.FormattingEnabled = true;
-            ComboBoxTI.Items.AddRange(new object[] { "Mensual", "Bimensual", "Trimestral", "Semestral", "Anual" });
+            ComboBoxTI.Items.AddRange(new object[] { "Dia", "Mensual", "Bimensual", "Trimestral", "Cuatrimestral", "Semestral", "Anual" });
             ComboBoxTI.Location = new Point(495, 345);
             ComboBoxTI.Name = "ComboBoxTI";
             ComboBoxTI.Size = new Size(121, 23);
@@ -192,7 +192,7 @@
             // 
             ComboBoxTiempo.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxTiempo.FormattingEnabled = true;
-            ComboBoxTiempo.Items.AddRange(new object[] { "Mensual", "Bimensual", "Trimestral", "Semestral", "Anual" });
+            ComboBoxTiempo.Items.AddRange(new object[] { "Dia", "Mensual", "Bimensual", "Trimestral", "Cuatrimestral", "Semestral", "Anual" });
             ComboBoxTiempo.Location = new Point(495, 383);
             ComboBoxTiempo.Name = "ComboBoxTiempo";
             ComboBoxTiempo.Size = new Size(121, 23);

@@ -17,8 +17,8 @@ namespace code_economy
         {
             InitializeComponent();
             ComboBoxQCalcular.SelectedIndex = 0;
-            ComboBoxTI.SelectedIndex = 0;
-            ComboBoxTiempo.SelectedIndex = 0;
+            ComboBoxTI.SelectedIndex = 1;
+            ComboBoxTiempo.SelectedIndex = 1;
         }
 
         private void LabelInteresSimple_Click(object sender, EventArgs e)
