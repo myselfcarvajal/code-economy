@@ -31,7 +31,7 @@
             LabelInteresSimple = new Label();
             LabelQCalcular = new Label();
             ComboBoxQCalcular = new ComboBox();
-            labelInteres = new Label();
+            LabelInteres = new Label();
             LabelCapital = new Label();
             LabelTasaInteres = new Label();
             LabelValorFinal = new Label();
@@ -83,16 +83,16 @@
             ComboBoxQCalcular.TabIndex = 2;
             ComboBoxQCalcular.SelectedIndexChanged += ComboBoxQCalcular_SelectedIndexChanged;
             // 
-            // labelInteres
+            // LabelInteres
             // 
-            labelInteres.AutoSize = true;
-            labelInteres.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelInteres.ForeColor = Color.White;
-            labelInteres.Location = new Point(285, 231);
-            labelInteres.Name = "labelInteres";
-            labelInteres.Size = new Size(61, 21);
-            labelInteres.TabIndex = 3;
-            labelInteres.Text = "Interes";
+            LabelInteres.AutoSize = true;
+            LabelInteres.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelInteres.ForeColor = Color.White;
+            LabelInteres.Location = new Point(285, 231);
+            LabelInteres.Name = "LabelInteres";
+            LabelInteres.Size = new Size(61, 21);
+            LabelInteres.TabIndex = 3;
+            LabelInteres.Text = "Interes";
             // 
             // LabelCapital
             // 
@@ -197,6 +197,7 @@
             ComboBoxTiempo.Name = "ComboBoxTiempo";
             ComboBoxTiempo.Size = new Size(121, 23);
             ComboBoxTiempo.TabIndex = 14;
+            ComboBoxTiempo.SelectedIndexChanged += ComboBoxTiempo_SelectedIndexChanged;
             // 
             // BtnCalcular
             // 
@@ -229,7 +230,7 @@
             Controls.Add(LabelValorFinal);
             Controls.Add(LabelTasaInteres);
             Controls.Add(LabelCapital);
-            Controls.Add(labelInteres);
+            Controls.Add(LabelInteres);
             Controls.Add(ComboBoxQCalcular);
             Controls.Add(LabelQCalcular);
             Controls.Add(LabelInteresSimple);
@@ -245,7 +246,7 @@
         private Label LabelInteresSimple;
         private Label LabelQCalcular;
         private ComboBox ComboBoxQCalcular;
-        private Label labelInteres;
+        private Label LabelInteres;
         private Label LabelCapital;
         private Label LabelTasaInteres;
         private Label LabelValorFinal;
