@@ -197,7 +197,6 @@
             ComboBoxTiempo.Name = "ComboBoxTiempo";
             ComboBoxTiempo.Size = new Size(121, 23);
             ComboBoxTiempo.TabIndex = 14;
-            ComboBoxTiempo.SelectedIndexChanged += ComboBoxTiempo_SelectedIndexChanged;
             // 
             // BtnCalcular
             // 
@@ -211,6 +210,7 @@
             BtnCalcular.TabIndex = 15;
             BtnCalcular.Text = "Calcular";
             BtnCalcular.UseVisualStyleBackColor = false;
+            BtnCalcular.Click += BtnCalcular_Click;
             // 
             // InteresSimple
             // 

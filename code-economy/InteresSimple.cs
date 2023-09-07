@@ -165,13 +165,57 @@ namespace code_economy
             TextBox_KeyPress(sender, e);
         }
 
-        private void ComboBoxTiempo_SelectedIndexChanged(object sender, EventArgs e)
+        private bool CamposVacios(string selectedOption)
         {
-            // Obtén la selección del primer ComboBox
-            string? seleccion = ComboBoxTiempo.SelectedItem?.ToString();
+            return selectedOption switch
+            {
+                "Interes" => TextBoxCap.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                "Capital" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                "Valor Final" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                "Tasa de Interes" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                "Tiempo" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                _ => true,// En caso de opción no válida, considerar campos vacíos
+            };
+        }
 
-            // Actualiza el segundo ComboBox con la misma selección
-            ComboBoxTI.SelectedItem = seleccion;
+        private void BtnCalcular_Click(object sender, EventArgs e)
+        {
+            string selectedOption = ComboBoxQCalcular.SelectedItem.ToString();
+
+            // Verificar campos vacíos
+            if (CamposVacios(selectedOption))
+            {
+                MessageBox.Show("EXISTEN CAMPOS VACÍOS");
+                return;
+            }
+
+            switch (selectedOption)
+            {
+                case "Interes":
+                    // Calcular el interés
+                    break;
+
+                case "Capital":
+                    // Calcular el capital
+                    break;
+
+                case "Valor Final":
+                    // Calcular el valor final
+
+                    break;
+
+                case "Tasa de Interes":
+                    // Calcular la tasa de interés
+                    break;
+
+                case "Tiempo":
+                    // Calcular el tiempo
+                    break;
+
+                default:
+                    // Manejar opción no válida
+                    break;
+            }
         }
     }
 }
