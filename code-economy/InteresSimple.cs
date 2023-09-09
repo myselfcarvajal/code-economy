@@ -195,9 +195,9 @@ namespace code_economy
             if (TextBoxDias.Text == "Dias")
             {
                 TextBoxDias.Text = "0";
-            } 
-            
-            if (TextBoxMeses.Text == "Meses") 
+            }
+
+            if (TextBoxMeses.Text == "Meses")
             {
                 TextBoxMeses.Text = "0";
             }
@@ -439,7 +439,7 @@ namespace code_economy
                             aux = double.Parse(TextBoxTiempo.Text);
                             double bimensual = 2;
 
-                            month = aux * bimensual; 
+                            month = aux * bimensual;
 
 
                             VF = CalculateValorFinal(C, i, month);
@@ -638,7 +638,7 @@ namespace code_economy
             double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
 
             // Calcular el tiempo utilizando la fórmula t = I / (C*i)
-            double tiempo = I / ((C)*(valorDecimal));
+            double tiempo = I / ((C) * (valorDecimal));
 
             //Tiempo en años
             ComboBoxTiempo.SelectedIndex = 6;

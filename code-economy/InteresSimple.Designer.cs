@@ -46,6 +46,7 @@
             BtnCalcular = new Button();
             TextBoxDias = new TextBox();
             TextBoxMeses = new TextBox();
+            LabelPorciento = new Label();
             SuspendLayout();
             // 
             // LabelInteresSimple
@@ -183,7 +184,7 @@
             ComboBoxTI.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxTI.FormattingEnabled = true;
             ComboBoxTI.Items.AddRange(new object[] { "Dia", "Mensual", "Bimensual", "Trimestral", "Cuatrimestral", "Semestral", "Anual" });
-            ComboBoxTI.Location = new Point(495, 345);
+            ComboBoxTI.Location = new Point(521, 345);
             ComboBoxTI.Name = "ComboBoxTI";
             ComboBoxTI.Size = new Size(121, 23);
             ComboBoxTI.TabIndex = 13;
@@ -239,12 +240,24 @@
             TextBoxMeses.MouseEnter += TextBoxMeses_MouseEnter;
             TextBoxMeses.MouseLeave += TextBoxMeses_MouseLeave;
             // 
+            // LabelPorciento
+            // 
+            LabelPorciento.AutoSize = true;
+            LabelPorciento.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LabelPorciento.ForeColor = Color.White;
+            LabelPorciento.Location = new Point(491, 347);
+            LabelPorciento.Name = "LabelPorciento";
+            LabelPorciento.Size = new Size(24, 21);
+            LabelPorciento.TabIndex = 19;
+            LabelPorciento.Text = "%";
+            // 
             // InteresSimple
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
             ClientSize = new Size(916, 612);
+            Controls.Add(LabelPorciento);
             Controls.Add(TextBoxMeses);
             Controls.Add(TextBoxDias);
             Controls.Add(BtnCalcular);
@@ -290,5 +303,6 @@
         private Button BtnCalcular;
         private TextBox TextBoxDias;
         private TextBox TextBoxMeses;
+        private Label LabelPorciento;
     }
 }
