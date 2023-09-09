@@ -44,6 +44,8 @@
             ComboBoxTI = new ComboBox();
             ComboBoxTiempo = new ComboBox();
             BtnCalcular = new Button();
+            TextBoxDias = new TextBox();
+            TextBoxMeses = new TextBox();
             SuspendLayout();
             // 
             // LabelInteresSimple
@@ -58,7 +60,6 @@
             LabelInteresSimple.TabIndex = 0;
             LabelInteresSimple.Text = "Interes Simple";
             LabelInteresSimple.TextAlign = ContentAlignment.TopCenter;
-            LabelInteresSimple.Click += LabelInteresSimple_Click;
             // 
             // LabelQCalcular
             // 
@@ -70,7 +71,6 @@
             LabelQCalcular.Size = new Size(213, 30);
             LabelQCalcular.TabIndex = 1;
             LabelQCalcular.Text = "¿Que desea calcular?";
-            LabelQCalcular.Click += LabelQCalcular_Click;
             // 
             // ComboBoxQCalcular
             // 
@@ -197,13 +197,14 @@
             ComboBoxTiempo.Name = "ComboBoxTiempo";
             ComboBoxTiempo.Size = new Size(121, 23);
             ComboBoxTiempo.TabIndex = 14;
+            ComboBoxTiempo.SelectedIndexChanged += ComboBoxTiempo_SelectedIndexChanged;
             // 
             // BtnCalcular
             // 
             BtnCalcular.BackColor = Color.FromArgb(255, 128, 0);
             BtnCalcular.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             BtnCalcular.ForeColor = Color.White;
-            BtnCalcular.Location = new Point(399, 490);
+            BtnCalcular.Location = new Point(399, 508);
             BtnCalcular.Margin = new Padding(2);
             BtnCalcular.Name = "BtnCalcular";
             BtnCalcular.Size = new Size(160, 50);
@@ -212,12 +213,40 @@
             BtnCalcular.UseVisualStyleBackColor = false;
             BtnCalcular.Click += BtnCalcular_Click;
             // 
+            // TextBoxDias
+            // 
+            TextBoxDias.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            TextBoxDias.ForeColor = SystemColors.InactiveCaption;
+            TextBoxDias.Location = new Point(389, 441);
+            TextBoxDias.Name = "TextBoxDias";
+            TextBoxDias.Size = new Size(100, 23);
+            TextBoxDias.TabIndex = 17;
+            TextBoxDias.Text = "Dias";
+            TextBoxDias.KeyPress += TextBoxDias_KeyPress;
+            TextBoxDias.MouseEnter += TextBoxDias_MouseEnter;
+            TextBoxDias.MouseLeave += TextBoxDias_MouseLeave;
+            // 
+            // TextBoxMeses
+            // 
+            TextBoxMeses.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            TextBoxMeses.ForeColor = SystemColors.InactiveCaption;
+            TextBoxMeses.Location = new Point(389, 412);
+            TextBoxMeses.Name = "TextBoxMeses";
+            TextBoxMeses.Size = new Size(100, 23);
+            TextBoxMeses.TabIndex = 18;
+            TextBoxMeses.Text = "Meses";
+            TextBoxMeses.KeyPress += TextBoxMeses_KeyPress;
+            TextBoxMeses.MouseEnter += TextBoxMeses_MouseEnter;
+            TextBoxMeses.MouseLeave += TextBoxMeses_MouseLeave;
+            // 
             // InteresSimple
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
             ClientSize = new Size(916, 612);
+            Controls.Add(TextBoxMeses);
+            Controls.Add(TextBoxDias);
             Controls.Add(BtnCalcular);
             Controls.Add(ComboBoxTiempo);
             Controls.Add(ComboBoxTI);
@@ -259,5 +288,7 @@
         private ComboBox ComboBoxTI;
         private ComboBox ComboBoxTiempo;
         private Button BtnCalcular;
+        private TextBox TextBoxDias;
+        private TextBox TextBoxMeses;
     }
 }
