@@ -65,7 +65,7 @@ namespace code_economy
 
         private void BtnInteresCompuesto_Click(object sender, EventArgs e)
         {
-
+            OpenFormHija(new InteresCompuesto());
         }
 
         private void BtnAnualidad_Click(object sender, EventArgs e)
