@@ -625,8 +625,6 @@ namespace code_economy
             // Calcular la Tasa de Interes utilizando la fórmula i = I / (C*t)
             double tasaInteres = I / ((C) * (year + (day / 365) + (month / 12)));
 
-            //% anual
-            ComboBoxTI.SelectedIndex = 6;
 
             //Convertir a porcentaje
             return tasaInteres * 100;
@@ -736,6 +734,67 @@ namespace code_economy
                 TextBoxMeses.Text = "Meses";
                 TextBoxMeses.ForeColor = Color.Silver;
             }
+        }
+
+        private void LimpiarCampoIntSimple()
+        {
+            switch (ComboBoxQCalcular.SelectedItem.ToString())
+            {
+                case "Interes":
+                    TextBoxInt.Text = "0";
+                    TextBoxCap.Text = "";
+                    TextBoxTI.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    TextBoxMeses.Text = "";
+                    TextBoxDias.Text = "";
+                    break;
+
+                case "Capital":
+                    TextBoxCap.Text = "0";
+                    TextBoxInt.Text = "";
+                    TextBoxTI.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    TextBoxMeses.Text = "";
+                    TextBoxDias.Text = "";
+                    break;
+
+                case "Valor Final":
+                    TextBoxVF.Text = "0";
+                    TextBoxCap.Text = "";
+                    TextBoxTI.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    TextBoxMeses.Text = "";
+                    TextBoxDias.Text = "";
+                    break;
+
+                case "Tasa de Interes":
+                    TextBoxTI.Text = "0";
+                    TextBoxInt.Text = "";
+                    TextBoxCap.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    TextBoxMeses.Text = "";
+                    TextBoxDias.Text = "";
+                    break;
+
+                case "Tiempo":
+                    TextBoxTiempo.Text = "0";
+                    TextBoxInt.Text = "";
+                    TextBoxCap.Text = "";
+                    TextBoxTI.Text = "";
+
+                    TextBoxMeses.Text = "";
+                    TextBoxDias.Text = "";
+                    break;
+            }
+        }
+
+        private void BtnTrashIntSimple_Click(object sender, EventArgs e)
+        {
+            LimpiarCampoIntSimple();
         }
     }
 }

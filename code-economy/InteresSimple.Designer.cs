@@ -47,6 +47,7 @@
             TextBoxDias = new TextBox();
             TextBoxMeses = new TextBox();
             LabelPorciento = new Label();
+            BtnTrashIntSimple = new Button();
             SuspendLayout();
             // 
             // LabelInteresSimple
@@ -251,12 +252,30 @@
             LabelPorciento.TabIndex = 19;
             LabelPorciento.Text = "%";
             // 
+            // BtnTrashIntSimple
+            // 
+            BtnTrashIntSimple.BackColor = Color.FromArgb(49, 66, 82);
+            BtnTrashIntSimple.FlatAppearance.BorderSize = 0;
+            BtnTrashIntSimple.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            BtnTrashIntSimple.FlatStyle = FlatStyle.Flat;
+            BtnTrashIntSimple.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnTrashIntSimple.ForeColor = Color.White;
+            BtnTrashIntSimple.Image = Properties.Resources.icon_trash;
+            BtnTrashIntSimple.Location = new Point(74, 500);
+            BtnTrashIntSimple.Name = "BtnTrashIntSimple";
+            BtnTrashIntSimple.Padding = new Padding(1, 0, 0, 0);
+            BtnTrashIntSimple.Size = new Size(70, 58);
+            BtnTrashIntSimple.TabIndex = 20;
+            BtnTrashIntSimple.UseVisualStyleBackColor = false;
+            BtnTrashIntSimple.Click += BtnTrashIntSimple_Click;
+            // 
             // InteresSimple
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
             ClientSize = new Size(916, 612);
+            Controls.Add(BtnTrashIntSimple);
             Controls.Add(LabelPorciento);
             Controls.Add(TextBoxMeses);
             Controls.Add(TextBoxDias);
@@ -304,5 +323,6 @@
         private TextBox TextBoxDias;
         private TextBox TextBoxMeses;
         private Label LabelPorciento;
+        private Button BtnTrashIntSimple;
     }
 }

@@ -286,6 +286,49 @@ namespace code_economy
 
             return capital;
         }
+
+        private void LimpiarCampoIntCompuesto()
+        {
+            switch (ComboBoxQCalcular.SelectedItem.ToString())
+            {
+                case "Capital":
+                    TextBoxCap.Text = "0";
+                    TextBoxVF.Text = "";
+                    TextBoxTI.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    break;
+
+                case "Valor Final":
+                    TextBoxVF.Text = "0";
+                    TextBoxCap.Text = "";
+                    TextBoxTI.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    break;
+
+                case "Tasa de Interes":
+                    TextBoxTI.Text = "0";
+                    TextBoxVF.Text = "";
+                    TextBoxCap.Text = "";
+
+                    TextBoxTiempo.Text = "";
+                    break;
+
+                case "Tiempo":
+                    TextBoxTiempo.Text = "0";
+                    TextBoxVF.Text = "";
+                    TextBoxCap.Text = "";
+                    TextBoxTI.Text = "";
+
+                    break;
+            }
+        }
+
+        private void BtnTrashIntCompuesto_Click(object sender, EventArgs e)
+        {
+            LimpiarCampoIntCompuesto();
+        }
     }
 }
 

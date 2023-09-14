@@ -45,6 +45,7 @@
             LabelTasaInteres = new Label();
             LabelCapital = new Label();
             LabelInteres = new Label();
+            BtnTrashIntCompuesto = new Button();
             SuspendLayout();
             // 
             // LabelInteresCompuesto
@@ -222,12 +223,30 @@
             LabelInteres.TabIndex = 20;
             LabelInteres.Text = "Interes";
             // 
+            // BtnTrashIntCompuesto
+            // 
+            BtnTrashIntCompuesto.BackColor = Color.FromArgb(49, 66, 82);
+            BtnTrashIntCompuesto.FlatAppearance.BorderSize = 0;
+            BtnTrashIntCompuesto.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            BtnTrashIntCompuesto.FlatStyle = FlatStyle.Flat;
+            BtnTrashIntCompuesto.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnTrashIntCompuesto.ForeColor = Color.White;
+            BtnTrashIntCompuesto.Image = Properties.Resources.icon_trash;
+            BtnTrashIntCompuesto.Location = new Point(78, 509);
+            BtnTrashIntCompuesto.Name = "BtnTrashIntCompuesto";
+            BtnTrashIntCompuesto.Padding = new Padding(1, 0, 0, 0);
+            BtnTrashIntCompuesto.Size = new Size(70, 58);
+            BtnTrashIntCompuesto.TabIndex = 34;
+            BtnTrashIntCompuesto.UseVisualStyleBackColor = false;
+            BtnTrashIntCompuesto.Click += BtnTrashIntCompuesto_Click;
+            // 
             // InteresCompuesto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
             ClientSize = new Size(916, 612);
+            Controls.Add(BtnTrashIntCompuesto);
             Controls.Add(LabelPorciento);
             Controls.Add(BtnCalcular);
             Controls.Add(ComboBoxTiempo);
@@ -271,5 +290,6 @@
         private Label LabelTasaInteres;
         private Label LabelCapital;
         private Label LabelInteres;
+        private Button BtnTrashIntCompuesto;
     }
 }
