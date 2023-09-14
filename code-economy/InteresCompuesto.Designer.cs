@@ -64,7 +64,7 @@
             // 
             ComboBoxQCalcular.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxQCalcular.FormattingEnabled = true;
-            ComboBoxQCalcular.Items.AddRange(new object[] { "Interes", "Capital", "Valor Final", "Tasa de Interes", "Tiempo" });
+            ComboBoxQCalcular.Items.AddRange(new object[] { "Capital", "Valor Final", "Tasa de Interes", "Tiempo" });
             ComboBoxQCalcular.Location = new Point(506, 136);
             ComboBoxQCalcular.Name = "ComboBoxQCalcular";
             ComboBoxQCalcular.Size = new Size(121, 23);

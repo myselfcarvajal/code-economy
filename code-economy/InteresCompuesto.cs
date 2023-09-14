@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace code_economy
 {
@@ -64,24 +65,14 @@ namespace code_economy
 
             switch (ComboBoxQCalcular.SelectedItem.ToString())
             {
-                case "Interes":
-                    TextBoxInt.Enabled = false;
-                    TextBoxInt.Text = "0";
-                    TextBoxInt.Focus();
-
-                    // Ocultar el Valor Final (TextBox) y el label Valor Final
-                    TextBoxVF.Visible = false; // Ocultar el TextBox de Valor Final
-                    LabelValorFinal.Visible = false; // Ocultar el label de Valor Final
-                    break;
-
                 case "Capital":
                     TextBoxCap.Enabled = false;
                     TextBoxCap.Text = "0";
                     TextBoxCap.Focus();
 
-                    // Ocultar el campo Valor Final (TextBox) y el label Valor Final
-                    TextBoxVF.Visible = false;
-                    LabelValorFinal.Visible = false;
+                    // Ocultar el Interes (TextBox) y el label Interes
+                    TextBoxInt.Visible = false;
+                    LabelInteres.Visible = false;
 
                     break;
 
@@ -100,9 +91,9 @@ namespace code_economy
                     TextBoxTI.Text = "0";
                     TextBoxTI.Focus();
 
-                    // Ocultar el Valor Final (TextBox) y el label Valor Final
-                    TextBoxVF.Visible = false;
-                    LabelValorFinal.Visible = false;
+                    // Ocultar el Interes (TextBox) y el label Interes
+                    TextBoxInt.Visible = false;
+                    LabelInteres.Visible = false;
                     break;
 
                 case "Tiempo":
@@ -110,9 +101,10 @@ namespace code_economy
                     TextBoxTiempo.Text = "0";
                     TextBoxTiempo.Focus();
 
-                    // Ocultar el campo Valor Final (TextBox) y el label Valor Final
-                    TextBoxVF.Visible = false;
-                    LabelValorFinal.Visible = false;
+                    // Ocultar el campo Interes (TextBox) y el Interes
+                    TextBoxInt.Visible = false;
+                    LabelInteres.Visible = false;
+
                     break;
             }
         }
@@ -158,11 +150,10 @@ namespace code_economy
         {
             return selectedOption switch
             {
-                "Interes" => TextBoxCap.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
-                "Capital" => TextBoxCap.Text == "" || TextBoxInt.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                "Capital" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
                 "Valor Final" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
-                "Tasa de Interes" => TextBoxCap.Text == "" || TextBoxTI.Text == "" || TextBoxInt.Text == "" || TextBoxTiempo.Text == "",
-                "Tiempo" => TextBoxCap.Text == "" || TextBoxInt.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
+                "Tasa de Interes" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTiempo.Text == "",
+                "Tiempo" => TextBoxCap.Text == "" || TextBoxVF.Text == "" || TextBoxTI.Text == "" || TextBoxTiempo.Text == "",
                 _ => true,// En caso de opción no válida, considerar campos vacíos
             };
         }
@@ -178,6 +169,12 @@ namespace code_economy
                 return;
             }
 
+            //Si existen campos vacios
+            if (TextBoxInt.Text == "")
+            {
+                TextBoxInt.Text = "0";
+            }
+
             // Declaracion de variables
             double C = double.Parse(TextBoxCap.Text);
             double i = double.Parse(TextBoxTI.Text);
@@ -187,129 +184,107 @@ namespace code_economy
             double month;
             double year;
             double aux;
-            double VF;
+            double VF = double.Parse(TextBoxVF.Text); ;
             //double I;
 
             switch (selectedOption)
             {
-                case "Interes":
-                    // Calcular el interés
-                    switch (ComboBoxTiempo.SelectedItem.ToString())
-                    {
-                        case "Mensual":
-                            break;
-
-                        case "Dia":
-                            break;
-
-                        case "Anual":
-                            break;
-
-                        case "Bimensual":
-                            break;
-
-                        case "Trimestral":
-                            break;
-
-                        case "Cuatrimestral":
-                            break;
-
-                        case "Semestral":
-                            break;
-                    }
-
-                    break;
 
                 case "Capital":
                     // Calcular el capital
-                    switch (ComboBoxTiempo.SelectedItem.ToString())
-                    {
-                        case "Mensual":
-                            break;
+                    C = CalculateCapital(C, VF, i, t);
 
-                        case "Dia":
-                            break;
-
-                        case "Anual":
-                            break;
-
-                        case "Bimensual":
-                            break;
-
-                        case "Trimestral":
-                            break;
-
-                        case "Cuatrimestral":
-                            break;
-
-                        case "Semestral":
-                            break;
-                    }
+                    TextBoxCap.Text = C.ToString("0.00"); ;
                     break;
 
                 case "Valor Final":
                     // Calcular el valor final
-                    switch (ComboBoxTiempo.SelectedItem.ToString())
-                    {
-                        case "Mensual":
-                            break;
+                    t = double.Parse(TextBoxTiempo.Text);
 
-                        case "Dia":
-                            break;
-
-                        case "Anual":
-                            break;
-
-                        case "Bimensual":
-                            break;
-
-                        case "Trimestral":
-                            break;
-
-                        case "Cuatrimestral":
-                            break;
-
-                        case "Semestral":
-                            break;
-                    }
-
+                    VF = CalculateValorFinalIntComp(C, i, t);
+                    TextBoxVF.Text = VF.ToString("0.00");
                     break;
 
                 case "Tasa de Interes":
                     // Calcular la tasa de interés
-                    switch (ComboBoxTiempo.SelectedItem.ToString())
-                    {
-                        case "Mensual":
-                            break;
+                    t = double.Parse(TextBoxTiempo.Text);
 
-                        case "Dia":
-                            break;
+                    i = CalculateTasaInteresIntComp(C, VF, t);
+                    TextBoxTI.Text = i.ToString("0.00");
 
-                        case "Anual":
-                            break;
+                    //Asignar temporalidad segun seleccion de ComboBoxTI
+                    int indiceSeleccionado_ = ComboBoxTiempo.SelectedIndex;
 
-                        case "Bimensual":
-                            break;
+                    ComboBoxTI.SelectedIndex = indiceSeleccionado_;
 
-                        case "Trimestral":
-                            break;
-
-                        case "Cuatrimestral":
-                            break;
-
-                        case "Semestral":
-                            break;
-                    }
                     break;
 
                 case "Tiempo":
                     // Calcular el tiempo
+                    VF = double.Parse(TextBoxVF.Text);
+
+                    t = CalculateTiempoIntComp(C, VF, i);
+                    Math.Truncate(t);
+
+                    TextBoxTiempo.Text = t.ToString("0.0000");
+
+                    //Asignar temporalidad segun seleccion de ComboBoxTI
+                    int indiceSeleccionado = ComboBoxTI.SelectedIndex;
+
+                    ComboBoxTiempo.SelectedIndex = indiceSeleccionado;
                     break;
 
                 default:
                     // Manejar opción no válida
                     break;
             }
+        }
+
+        private double CalculateValorFinalIntComp(double C, double i, double t = 0)
+        {
+
+            double porcentaje = i; // Este es el valor en porcentaje (16%)
+            double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
+
+            // Calcular el valor final utilizando la fórmula VF = C * ((1 + i)^t)
+            double valorFinal = C * Math.Pow((1 + valorDecimal), t);
+            return valorFinal;
+        }
+
+        private double CalculateTiempoIntComp(double C, double VF, double i)
+        {
+
+            double porcentaje = i; // Este es el valor en porcentaje (16%)
+            double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
+
+            double aux, _aux;
+            aux = VF / C;
+            _aux = 1 + valorDecimal;
+
+
+            // Calcular el tiempo utilizando la fórmula t = Log VF – Log C / Log ( 1 + i)
+            double valorFinal = Math.Log(aux) / Math.Log(_aux);
+            return valorFinal;
+        }
+
+        private double CalculateTasaInteresIntComp(double C, double VF, double t)
+        {
+            // Calcular la Tasa de Interes utilizando la fórmula i = (VF / C) ^ 1 / n - 1
+            double tasaInteres = Math.Pow((VF / C), 1 / t) - 1;
+            tasaInteres = tasaInteres * 100;
+
+            return tasaInteres;
+        }
+
+        private double CalculateCapital(double C, double VF, double i, double t)
+        {
+            double porcentaje = i; // Este es el valor en porcentaje (16%)
+            double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
+
+            // Calcular la Tasa de Interes utilizando la fórmula C = VF / (1 + i) ^ t
+            double capital = VF / Math.Pow((1 + valorDecimal), t);
+
+            return capital;
         }
     }
 }
