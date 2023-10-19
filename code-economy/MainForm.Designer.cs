@@ -165,7 +165,7 @@
             BtnAnualidad.Padding = new Padding(1, 0, 0, 0);
             BtnAnualidad.Size = new Size(284, 90);
             BtnAnualidad.TabIndex = 2;
-            BtnAnualidad.Text = "Anualidad";
+            BtnAnualidad.Text = "Tasa Interna Retorno";
             BtnAnualidad.UseVisualStyleBackColor = false;
             BtnAnualidad.Click += BtnAnualidad_Click;
             // 

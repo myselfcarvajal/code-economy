@@ -70,7 +70,7 @@ namespace code_economy
 
         private void BtnAnualidad_Click(object sender, EventArgs e)
         {
-            OpenFormHija(new Anualidad());
+            OpenFormHija(new TasaInternaRetorno());
         }
 
         private void BtnOtros_Click(object sender, EventArgs e)
