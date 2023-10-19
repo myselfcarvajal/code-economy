@@ -40,6 +40,7 @@
             textBoxTIR = new TextBox();
             labelPorcentaje = new Label();
             BtnCalcularTIR = new Button();
+            BtnTrashTasaInterRetorno = new Button();
             SuspendLayout();
             // 
             // LabelAnualidad
@@ -60,7 +61,7 @@
             labelInvInicial.AutoSize = true;
             labelInvInicial.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             labelInvInicial.ForeColor = Color.White;
-            labelInvInicial.Location = new Point(322, 133);
+            labelInvInicial.Location = new Point(385, 165);
             labelInvInicial.Name = "labelInvInicial";
             labelInvInicial.Size = new Size(152, 25);
             labelInvInicial.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // textBoxIvInicial
             // 
-            textBoxIvInicial.Location = new Point(480, 133);
+            textBoxIvInicial.Location = new Point(543, 165);
             textBoxIvInicial.Name = "textBoxIvInicial";
             textBoxIvInicial.Size = new Size(100, 23);
             textBoxIvInicial.TabIndex = 3;
@@ -79,7 +80,7 @@
             labelDinero.AutoSize = true;
             labelDinero.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             labelDinero.ForeColor = Color.White;
-            labelDinero.Location = new Point(586, 133);
+            labelDinero.Location = new Point(649, 165);
             labelDinero.Name = "labelDinero";
             labelDinero.Size = new Size(23, 25);
             labelDinero.TabIndex = 4;
@@ -90,7 +91,7 @@
             labelQCantidadPeriodos.AutoSize = true;
             labelQCantidadPeriodos.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             labelQCantidadPeriodos.ForeColor = Color.White;
-            labelQCantidadPeriodos.Location = new Point(207, 176);
+            labelQCantidadPeriodos.Location = new Point(270, 208);
             labelQCantidadPeriodos.Name = "labelQCantidadPeriodos";
             labelQCantidadPeriodos.Size = new Size(270, 25);
             labelQCantidadPeriodos.TabIndex = 5;
@@ -101,7 +102,7 @@
             ComboBoxQCantidadPeriodos.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxQCantidadPeriodos.FormattingEnabled = true;
             ComboBoxQCantidadPeriodos.Items.AddRange(new object[] { "1", "2" });
-            ComboBoxQCantidadPeriodos.Location = new Point(480, 176);
+            ComboBoxQCantidadPeriodos.Location = new Point(543, 208);
             ComboBoxQCantidadPeriodos.Name = "ComboBoxQCantidadPeriodos";
             ComboBoxQCantidadPeriodos.Size = new Size(100, 23);
             ComboBoxQCantidadPeriodos.TabIndex = 9;
@@ -109,7 +110,7 @@
             // 
             // textBoxAnyo1
             // 
-            textBoxAnyo1.Location = new Point(480, 228);
+            textBoxAnyo1.Location = new Point(543, 260);
             textBoxAnyo1.Name = "textBoxAnyo1";
             textBoxAnyo1.Size = new Size(100, 23);
             textBoxAnyo1.TabIndex = 10;
@@ -117,7 +118,7 @@
             // 
             // textBoxAnyo2
             // 
-            textBoxAnyo2.Location = new Point(480, 260);
+            textBoxAnyo2.Location = new Point(543, 292);
             textBoxAnyo2.Name = "textBoxAnyo2";
             textBoxAnyo2.Size = new Size(100, 23);
             textBoxAnyo2.TabIndex = 11;
@@ -128,7 +129,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(194, 325);
+            label1.Location = new Point(257, 357);
             label1.Name = "label1";
             label1.Size = new Size(260, 25);
             label1.TabIndex = 12;
@@ -136,7 +137,7 @@
             // 
             // textBoxTIR
             // 
-            textBoxTIR.Location = new Point(480, 327);
+            textBoxTIR.Location = new Point(543, 359);
             textBoxTIR.Name = "textBoxTIR";
             textBoxTIR.Size = new Size(100, 23);
             textBoxTIR.TabIndex = 13;
@@ -146,7 +147,7 @@
             labelPorcentaje.AutoSize = true;
             labelPorcentaje.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             labelPorcentaje.ForeColor = Color.White;
-            labelPorcentaje.Location = new Point(586, 327);
+            labelPorcentaje.Location = new Point(649, 359);
             labelPorcentaje.Name = "labelPorcentaje";
             labelPorcentaje.Size = new Size(28, 25);
             labelPorcentaje.TabIndex = 14;
@@ -157,7 +158,7 @@
             BtnCalcularTIR.BackColor = Color.FromArgb(255, 128, 0);
             BtnCalcularTIR.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             BtnCalcularTIR.ForeColor = Color.White;
-            BtnCalcularTIR.Location = new Point(364, 457);
+            BtnCalcularTIR.Location = new Point(427, 489);
             BtnCalcularTIR.Margin = new Padding(2);
             BtnCalcularTIR.Name = "BtnCalcularTIR";
             BtnCalcularTIR.Size = new Size(160, 50);
@@ -166,12 +167,30 @@
             BtnCalcularTIR.UseVisualStyleBackColor = false;
             BtnCalcularTIR.Click += BtnCalcularTIR_Click;
             // 
+            // BtnTrashTasaInterRetorno
+            // 
+            BtnTrashTasaInterRetorno.BackColor = Color.FromArgb(49, 66, 82);
+            BtnTrashTasaInterRetorno.FlatAppearance.BorderSize = 0;
+            BtnTrashTasaInterRetorno.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            BtnTrashTasaInterRetorno.FlatStyle = FlatStyle.Flat;
+            BtnTrashTasaInterRetorno.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnTrashTasaInterRetorno.ForeColor = Color.White;
+            BtnTrashTasaInterRetorno.Image = Properties.Resources.icon_trash;
+            BtnTrashTasaInterRetorno.Location = new Point(125, 489);
+            BtnTrashTasaInterRetorno.Name = "BtnTrashTasaInterRetorno";
+            BtnTrashTasaInterRetorno.Padding = new Padding(1, 0, 0, 0);
+            BtnTrashTasaInterRetorno.Size = new Size(70, 58);
+            BtnTrashTasaInterRetorno.TabIndex = 35;
+            BtnTrashTasaInterRetorno.UseVisualStyleBackColor = false;
+            BtnTrashTasaInterRetorno.Click += BtnTrashTasaInterRetorno_Click;
+            // 
             // TasaInternaRetorno
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
             ClientSize = new Size(916, 612);
+            Controls.Add(BtnTrashTasaInterRetorno);
             Controls.Add(BtnCalcularTIR);
             Controls.Add(labelPorcentaje);
             Controls.Add(textBoxTIR);
@@ -205,5 +224,6 @@
         private TextBox textBoxTIR;
         private Label labelPorcentaje;
         private Button BtnCalcularTIR;
+        private Button BtnTrashTasaInterRetorno;
     }
 }

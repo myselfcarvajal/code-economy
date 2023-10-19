@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace code_economy
 {
@@ -16,6 +17,9 @@ namespace code_economy
         {
             InitializeComponent();
             ComboBoxQCantidadPeriodos.SelectedIndex = 1;
+            textBoxAnyo1.Text = "0";
+            textBoxAnyo2.Text = "0";
+            textBoxIvInicial.Text = "0";
         }
 
         //Solo permitir la entrada de (Numeros) y (,)
@@ -174,6 +178,19 @@ namespace code_economy
                     // Manejar otras opciones del ComboBox aquí
                     break;
             }
+        }
+
+        private void LimpiarCampoTasInternaRetorno()
+        {
+            textBoxTIR.Text = "0";
+            textBoxIvInicial.Text = "0";
+            textBoxAnyo1.Text = "0";
+            textBoxAnyo2.Text = "0";
+        }
+
+        private void BtnTrashTasaInterRetorno_Click(object sender, EventArgs e)
+        {
+            LimpiarCampoTasInternaRetorno();
         }
     }
 }
