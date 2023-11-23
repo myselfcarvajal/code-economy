@@ -146,6 +146,7 @@
             TextBoxInt.Name = "TextBoxInt";
             TextBoxInt.Size = new Size(100, 23);
             TextBoxInt.TabIndex = 8;
+            TextBoxInt.TextChanged += TextBoxInt_TextChanged;
             TextBoxInt.KeyPress += TextBoxInt_KeyPress;
             // 
             // TextBoxCap

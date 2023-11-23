@@ -796,5 +796,10 @@ namespace code_economy
         {
             LimpiarCampoIntSimple();
         }
+
+        private void TextBoxInt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

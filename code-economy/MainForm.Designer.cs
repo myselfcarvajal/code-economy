@@ -34,7 +34,7 @@
             BtnMaximize = new PictureBox();
             BtnClose = new PictureBox();
             SideBar = new Panel();
-            BtnOtros = new Button();
+            BtnGra = new Button();
             BtnAnualidad = new Button();
             BtnInteresCompuesto = new Button();
             BtnInteresSimple = new Button();
@@ -120,7 +120,7 @@
             // SideBar
             // 
             SideBar.BackColor = Color.FromArgb(26, 32, 40);
-            SideBar.Controls.Add(BtnOtros);
+            SideBar.Controls.Add(BtnGra);
             SideBar.Controls.Add(BtnAnualidad);
             SideBar.Controls.Add(BtnInteresCompuesto);
             SideBar.Controls.Add(BtnInteresSimple);
@@ -131,24 +131,24 @@
             SideBar.Size = new Size(284, 612);
             SideBar.TabIndex = 1;
             // 
-            // BtnOtros
+            // BtnGra
             // 
-            BtnOtros.BackColor = Color.FromArgb(26, 32, 40);
-            BtnOtros.FlatAppearance.BorderSize = 0;
-            BtnOtros.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
-            BtnOtros.FlatStyle = FlatStyle.Flat;
-            BtnOtros.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            BtnOtros.ForeColor = Color.White;
-            BtnOtros.Image = Properties.Resources.icon_others_;
-            BtnOtros.ImageAlign = ContentAlignment.MiddleLeft;
-            BtnOtros.Location = new Point(0, 524);
-            BtnOtros.Name = "BtnOtros";
-            BtnOtros.Padding = new Padding(1, 0, 0, 0);
-            BtnOtros.Size = new Size(284, 90);
-            BtnOtros.TabIndex = 3;
-            BtnOtros.Text = "Otros";
-            BtnOtros.UseVisualStyleBackColor = false;
-            BtnOtros.Click += BtnOtros_Click;
+            BtnGra.BackColor = Color.FromArgb(26, 32, 40);
+            BtnGra.FlatAppearance.BorderSize = 0;
+            BtnGra.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 80, 200);
+            BtnGra.FlatStyle = FlatStyle.Flat;
+            BtnGra.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnGra.ForeColor = Color.White;
+            BtnGra.Image = Properties.Resources.icon_others_;
+            BtnGra.ImageAlign = ContentAlignment.MiddleLeft;
+            BtnGra.Location = new Point(0, 524);
+            BtnGra.Name = "BtnGra";
+            BtnGra.Padding = new Padding(1, 0, 0, 0);
+            BtnGra.Size = new Size(284, 90);
+            BtnGra.TabIndex = 3;
+            BtnGra.Text = "Gradiente";
+            BtnGra.UseVisualStyleBackColor = false;
+            BtnGra.Click += BtnOtros_Click;
             // 
             // BtnAnualidad
             // 
@@ -227,6 +227,7 @@
             ContainerPanel.Name = "ContainerPanel";
             ContainerPanel.Size = new Size(916, 612);
             ContainerPanel.TabIndex = 2;
+            ContainerPanel.Paint += ContainerPanel_Paint;
             // 
             // MainForm
             // 
@@ -262,6 +263,6 @@
         private Button BtnInteresSimple;
         private Button BtnInteresCompuesto;
         private Button BtnAnualidad;
-        private Button BtnOtros;
+        private Button BtnGra;
     }
 }

@@ -75,6 +75,7 @@ namespace code_economy
 
         private void BtnOtros_Click(object sender, EventArgs e)
         {
+            OpenFormHija(new GradientesForm());
 
         }
 
@@ -87,6 +88,11 @@ namespace code_economy
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void ContainerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

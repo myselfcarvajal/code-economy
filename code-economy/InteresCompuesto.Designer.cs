@@ -217,7 +217,7 @@
             LabelInteres.AutoSize = true;
             LabelInteres.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LabelInteres.ForeColor = Color.White;
-            LabelInteres.Location = new Point(296, 240);
+            LabelInteres.Location = new Point(297, 240);
             LabelInteres.Name = "LabelInteres";
             LabelInteres.Size = new Size(61, 21);
             LabelInteres.TabIndex = 20;
