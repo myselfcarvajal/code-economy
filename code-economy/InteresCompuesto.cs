@@ -242,13 +242,39 @@ namespace code_economy
 
         private double CalculateValorFinalIntComp(double C, double i, double t = 0)
         {
+            //Anual Capital Mensual
+            // Verificar campos vacíos
+            // Verificar campos vacíos
+            if (ComboBoxTI.SelectedIndex == 7 && ComboBoxTiempo.SelectedIndex == 7)
+            {
+                double porcentaje = i / 12; // Este es el valor en porcentaje (16%)
+                double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
 
-            double porcentaje = i; // Este es el valor en porcentaje (16%)
-            double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
+                double tMensual = t * 12; // Convertir el tiempo a meses
 
-            // Calcular el valor final utilizando la fórmula VF = C * ((1 + i)^t)
-            double valorFinal = C * Math.Pow((1 + valorDecimal), t);
-            return valorFinal;
+                // Calcular el valor final utilizando la fórmula VF = C * ((1 + i)^t)
+                double valorFinal = C * Math.Pow(1 + valorDecimal, tMensual);
+                return valorFinal;
+            }
+            else if (ComboBoxTI.SelectedIndex == 7)
+            {
+                double porcentaje = i / 12; // Este es el valor en porcentaje (16%)
+                double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
+
+                // Calcular el valor final utilizando la fórmula VF = C * ((1 + i)^t)
+                double valorFinal = C * Math.Pow(1 + valorDecimal, t);
+                return valorFinal;
+            }
+            else
+            {
+                double porcentaje = i; // Este es el valor en porcentaje (16%)
+                double valorDecimal = porcentaje / 100.0; // Convierte el porcentaje a decimal
+
+                // Calcular el valor final utilizando la fórmula VF = C * ((1 + i)^t)
+                double valorFinal = C * Math.Pow(1 + valorDecimal, t);
+                return valorFinal;
+            }
+
         }
 
         private double CalculateTiempoIntComp(double C, double VF, double i)
