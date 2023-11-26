@@ -17,6 +17,7 @@ namespace code_economy
             InitializeComponent();
             TextBoxTiempo.Text = "0";
             TexBoxCreciente.Text = "0";
+            TextBoxCuota.Text = "0";
 
 
         }
@@ -56,49 +57,46 @@ namespace code_economy
                         case "Valor Presente":
                             var aux = ValorPresente(cuotainicial, Gradiente, Tiempo, Interes);
                             double Vcreciente = aux.creciente;
-                            TexBoxCreciente.Text = Vcreciente.ToString();
+                            TexBoxCreciente.Text = Vcreciente.ToString("N2");
                             double Vdecreciente = aux.decreciente;
-                            textBoxValor2.Text = Vdecreciente.ToString();
+                            textBoxValor2.Text = Vdecreciente.ToString("N2");
 
                             break;
 
                         case "Valor Infinito":
                             aux = ValorInfinito(cuotainicial, Gradiente, Interes);
                             Vcreciente = aux.creciente;
-                            TexBoxCreciente.Text = Vcreciente.ToString();
+                            TexBoxCreciente.Text = Vcreciente.ToString("N2");
                             Vdecreciente = aux.decreciente;
-                            textBoxValor2.Text = Vdecreciente.ToString();
+                            textBoxValor2.Text = Vdecreciente.ToString("N2");
 
                             break;
 
                         case "Valor Futuro":
                             aux = ValorFuturo(cuotainicial, Gradiente, Tiempo, Interes);
                             Vcreciente = aux.creciente;
-                            TexBoxCreciente.Text = Vcreciente.ToString();
+                            TexBoxCreciente.Text = Vcreciente.ToString("N2");
                             Vdecreciente = aux.decreciente;
-                            textBoxValor2.Text = Vdecreciente.ToString();
+                            textBoxValor2.Text = Vdecreciente.ToString("N2");
 
                             break;
 
                         case "Capital":
                             var aux1 = CalcularCapital(creciente, Gradiente, Tiempo, Interes);
 
-                            TextBoxCuota.Text = aux1.ToString();
+                            TextBoxCuota.Text = aux1.ToString("N2");
 
 
                             break;
 
-                        // Agrega más casos según sea necesario para otras opciones de comboBoxCal
 
                         default:
-                            // Manejar un caso por defecto si no se encuentra una coincidencia en comboBoxCal
                             break;
 
 
                     }
                     break;
 
-                // Agrega más casos según sea necesario para otras opciones de ComboBoxQTema
 
                 default:
                     // Manejar un caso por defecto si no se encuentra una coincidencia en ComboBoxQTema
@@ -123,7 +121,7 @@ namespace code_economy
             double creciente = A * P1 + comun2 * (P1 - (N / comun));
             double decreciente = A * P1 - comun2 * (P1 - (N / comun));
 
-            return (creciente, decreciente);
+            return (Math.Round(creciente, 2), Math.Round(decreciente, 2));
         }
 
 
@@ -143,7 +141,7 @@ namespace code_economy
             //double decreciente = A * (comun / PD) - comun2 * ((comun / PD) - N);
 
 
-            return (creciente, decreciente);
+            return (Math.Round(creciente,2), Math.Round(decreciente,2));
         }
 
         private (double creciente, double decreciente) ValorInfinito(double A, double G, double I)
@@ -152,7 +150,7 @@ namespace code_economy
             double PD = I / 100;
             double creciente = (A / PD) + (G / Math.Pow(PD, 2));
             double decreciente = (A / PD) - (G / Math.Pow(PD, 2));
-            return (creciente, decreciente);
+            return (Math.Round(creciente, 2), Math.Round(decreciente,2));
         }
 
         private double CalcularCapital(double ValorFuturo, double G, double N, double I)
@@ -163,7 +161,7 @@ namespace code_economy
             double denominador = (comun - 1) / PD;
             double A = (ValorFuturo - G * ((comun - 1 - N * PD) / Math.Pow(PD, 2))) / denominador;
 
-            return A;
+            return Math.Round(A,2);
         }
 
         private void BtnTrashIntCompuesto_Click(object sender, EventArgs e)
